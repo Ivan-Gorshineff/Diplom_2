@@ -1,6 +1,6 @@
 import pytest
 import requests
-from utils import requests_api, data, fakers
+from utils import requests_api
 from utils.routes import ApiRoutes
 
 
@@ -16,7 +16,7 @@ def get_user_token():
         'name': name
     }
     response = requests.post(ApiRoutes.LOGIN, data=payload)
-    token = response.json().get('essToken')
+    token = response.json().get('accessToken')
 
     yield token
     requests_api.delete_user(token)
