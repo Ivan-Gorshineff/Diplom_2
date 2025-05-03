@@ -1,5 +1,6 @@
-from faker import Faker
 import random
+
+from faker import Faker
 from string import ascii_lowercase
 
 
